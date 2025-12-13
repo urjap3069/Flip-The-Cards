@@ -3,7 +3,7 @@ const movesDisplay = document.getElementById('moves');
 const restartBtn = document.getElementById('restart-btn');
 const levelButtons = document.querySelectorAll('.level-btn');
 
-let cardValues = [];
+let cardValues = [];~
 let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
