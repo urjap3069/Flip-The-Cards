@@ -1,14 +1,29 @@
+const welcome = document.getElementById('welcome');
+const playBtn = document.getElementById('playBtn');
+const gameContainer = document.getElementById('gameContainer');
 const gameBoard = document.getElementById('game-board');
 const movesDisplay = document.getElementById('moves');
-const restartBtn = document.getElementById('restart-btn');
+const restartBtn = document.getElementById('restartBtn');
 const levelButtons = document.querySelectorAll('.level-btn');
 
-let cardValues = [];
+
+
+let cardValues = [];  
 let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
 let moves = 0;
 let gridSize = 4;
+
+
+
+playBtn.addEventListener('click', () => {
+    welcome.classList.add('hide');
+    gameContainer.classList.remove('hide');
+    welcomeShown = false;
+});
+
+
 
 // 🔹 Your image list (replace or add more)
 const cardImages = [
@@ -107,7 +122,7 @@ function resetTurn() {
     [firstCard, secondCard, lockBoard] = [null, null, false];
 }
 
-restartBtn.addEventListener('click', generateCards);
+playAgainBtn.addEventListener('click', generateCards);
 
 levelButtons.forEach(btn => {
     btn.addEventListener('click', () => {
